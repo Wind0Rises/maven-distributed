@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<!-- 安装在本地仓库或者是远程仓库，最基础的pom文件，主要配置一些maven插件 -->
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.liu.basis</groupId>
+	<artifactId>basis-pom</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	
+	<name>basis-pom</name>
+	
+	<distributionManagement>
+		<!-- 发布库 -->
+		<repository>
+			<id>nexus-releases</id>
+			<name>Nexus Release Repository</name>
+			<url>http://47.100.116.136:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<!-- 快照库 -->
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<name>Nexus Snapshot Repository</name>
+			<url>http://47.100.116.136:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
+	<!-- 配置一些maven插件 -->
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- 发布插件 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.7</version>
+					<configuration>	
+						<!-- 去除时间戳 -->
+						<uniqueVersion>false</uniqueVersion>
+					</configuration>
+				</plugin>
+				
+				<!-- 编译插件 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.7.0</version>
+					<configuration>
+						<failOnError>true</failOnError>
+						<verbose>true</verbose>
+						<fork>true</fork>
+						<compilerArgument>-nowarn</compilerArgument>
+						<!-- JDK版本 -->
+						<source>1.8</source>
+						<target>1.8</target>
+						<!-- 字符编码格式 -->
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				
+				<!-- 生成sources源码包的插件 -->  
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>3.0.1</version>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	
+</project>
