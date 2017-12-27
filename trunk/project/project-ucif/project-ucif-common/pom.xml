@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.liu.exercise</groupId>
+		<artifactId>project-ucif</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>project-ucif-common</artifactId>
+	<packaging>pom</packaging>
+	<name>project-ucif-common</name>
+	
+	<!-- 所有的module模块 -->
+	<modules>
+		<module>project-ucif-common-config</module>
+		<module>project-ucif-common-core</module>
+		<module>project-ucif-common-util</module>
+		<module>project-ucif-common-api</module>
+	</modules>
+</project>

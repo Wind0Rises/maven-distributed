@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.liu.exercise</groupId>
+		<artifactId>project-ucif-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	
+	<groupId>com.liu.exercise</groupId>
+	<artifactId>project-ucif-service-student-impl</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>project-ucif-service-student-impl</name>
+
+	<!-- 直接映入对应的接口工【project-ucif-service-student】，因为依赖关系，会引入对应的公共工程，
+		   然后引入其他相应的jar -->
+	<dependencies>
+		<dependency>
+			<groupId>com.liu.exercise</groupId>
+			<artifactId>project-ucif-service-student</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.liu.exercise</groupId>
+			<artifactId>project-ucif-common-config</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	
+</project>
